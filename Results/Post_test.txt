@@ -1,0 +1,41 @@
+============================================
+POST-OPTIMIZATION RESULTS — After Changes
+Date: 27-03-2026
+============================================
+
+[PING TEST]
+Cloudflare (1.1.1.1) → Min: 4ms  / Max: 11ms  / Avg: 5ms  / Loss: 0%
+Google  (8.8.8.8)    → Min: 32ms / Max: 36ms  / Avg: 32ms / Loss: 0%
+
+[BUFFERBLOAT TEST — Waveform]
+Test ID                  : 9fb08823-f766-43b9-8915
+Grade                    : B
+Idle Latency             : 2.78ms
+Download Latency Spike   : +34ms
+Upload Latency Spike     : 0ms
+Peak Download Ping       : 57.49ms
+95th Percentile Download : 61.2ms
+Low Latency Gaming       : FAIL (4ms away from PASS threshold)
+
+[DELTA COMPARISON]
+Google Max Spike     : 228ms → 36ms    (-192ms ELIMINATED) 🔥
+Google Avg           : 45ms  → 32ms    (-13ms)
+Idle Latency         : 3.95ms → 2.78ms (-30%)
+Download Spike       : 41ms  → 34ms    (-17%)
+Peak Download Ping   : 82.4ms → 57.49ms (-30%)
+Packet Loss          : 0%    → 0%      (perfect throughout)
+
+[CHANGES APPLIED]
+DNS              : Jio ISP → Cloudflare 1.1.1.1 + 1.0.0.1 (IPv4+IPv6)
+Static IP        : 192.16.x.x (Windows adapter, permanent)
+MTU              : 1500 confirmed optimal, no change
+QoS CS2          : DSCP 46 Expedited Forwarding via Registry
+QoS Valorant     : DSCP 46 Expedited Forwarding via Registry
+TCP Auto-Tuning  : Normal → Restricted
+Congestion Ctrl  : CUBIC → CTCP
+ECN Capability   : Disabled → Enabled
+
+[HARDWARE CEILING NOTE]
+Remaining bufferbloat is inside Jio ONT hardware buffer.
+SQM required for Grade A — needs OpenWrt compatible router.
+Upgrade: TP-Link Archer AX55 / Asus RT-AX58U (~Rs. 4000-5000)

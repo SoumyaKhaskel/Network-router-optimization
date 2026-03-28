@@ -1,0 +1,223 @@
+Windows 10 Home (64-bit) Build:26200 10.2 27.03.2026 13:55:56
+!!!-------------------!!!
+netsh int tcp show supplemental
+
+The TCP global default template is internet
+
+TCP Supplemental Parameters
+----------------------------------------------
+Minimum RTO (msec)                  : 300 
+Initial Congestion Window (MSS)     : 10 
+Congestion Control Provider         : ctcp 
+Enable Congestion Window Restart    : disabled 
+Delayed ACK timeout (msec)          : 40 
+Delayed ACK frequency               : 2 
+Enable RACK                         : enabled 
+Enable Tail Loss Probe              : enabled 
+
+Please use the 'netsh int tcp show supplementalports' and 
+'netsh int tcp show supplementalsubnets' commands to view active filters.
+
+
+
+!!!-------------------!!!
+netsh int ip show interfaces
+
+Idx     Met         MTU          State                Name
+---  ----------  ----------  ------------  ---------------------------
+  1          75  4294967295  connected     Loopback Pseudo-Interface 1
+ 13          25        1500  connected     Ethernet
+
+
+
+!!!-------------------!!!
+PowerShell.exe Get-NetAdapterLso -Name '*'
+
+Name                           Version         V1IPv4Enabled  IPv4Enabled  IPv6Enabled 
+----                           -------         -------------  -----------  ----------- 
+Ethernet                       LSO Version 2   False          True         True        
+
+
+
+
+!!!-------------------!!!
+PowerShell.exe Get-NetAdapterChecksumOffload '*'
+
+Name                           IpIPv4Enabled   TcpIPv4Enabled  TcpIPv6Enabled  UdpIPv4Enabled  UdpIPv6Enabled 
+----                           -------------   --------------  --------------  --------------  -------------- 
+Ethernet                       RxTxEnabled     RxTxEnabled     RxTxEnabled     RxTxEnabled     RxTxEnabled    
+
+
+
+
+!!!-------------------!!!
+PowerShell.exe Get-NetTCPSetting -SettingName internet
+
+
+SettingName                     : Internet
+MinRto(ms)                      : 300
+InitialCongestionWindow(MSS)    : 10
+CongestionProvider              : CTCP
+CwndRestart                     : False
+DelayedAckTimeout(ms)           : 40
+DelayedAckFrequency             : 2
+MemoryPressureProtection        : Enabled
+AutoTuningLevelLocal            : Restricted
+AutoTuningLevelGroupPolicy      : NotConfigured
+AutoTuningLevelEffective        : Local
+EcnCapability                   : Enabled
+Timestamps                      : Allowed
+InitialRto(ms)                  : 1000
+ScalingHeuristics               : Disabled
+DynamicPortRangeStartPort       : 49152
+DynamicPortRangeNumberOfPorts   : 16384
+AutomaticUseCustom              : Disabled
+NonSackRttResiliency            : Disabled
+ForceWS                         : Enabled
+MaxSynRetransmissions           : 4
+AutoReusePortRangeStartPort     : 0
+AutoReusePortRangeNumberOfPorts : 0
+
+
+
+
+
+!!!-------------------!!!
+netsh int tcp show global
+Querying active state...
+
+TCP Global Parameters
+----------------------------------------------
+Receive-Side Scaling State          : enabled 
+Receive Window Auto-Tuning Level    : restricted 
+Add-On Congestion Control Provider  : default 
+ECN Capability                      : enabled 
+RFC 1323 Timestamps                 : allowed 
+Initial RTO                         : 1000 
+Receive Segment Coalescing State    : enabled 
+Non Sack Rtt Resiliency             : disabled 
+Max SYN Retransmissions             : 4 
+Fast Open                           : enabled 
+Fast Open Fallback                  : enabled 
+HyStart                             : enabled 
+Proportional Rate Reduction         : enabled 
+Pacing Profile                      : off 
+
+
+
+!!!-------------------!!!
+PowerShell.exe Get-NetOffloadGlobalSetting
+
+
+ReceiveSideScaling           : Enabled
+ReceiveSegmentCoalescing     : Enabled
+Chimney                      : Disabled
+TaskOffload                  : Enabled
+NetworkDirect                : Enabled
+NetworkDirectAcrossIPSubnets : Blocked
+PacketCoalescingFilter       : Enabled
+
+
+
+
+
+!!!-------------------!!!
+netsh int ip show interfaces
+
+Idx     Met         MTU          State                Name
+---  ----------  ----------  ------------  ---------------------------
+  1          75  4294967295  connected     Loopback Pseudo-Interface 1
+ 13          25        1500  connected     Ethernet
+
+
+
+!!!-------------------!!!
+PowerShell.exe Get-NetAdapterLso -Name '*'
+
+Name                           Version         V1IPv4Enabled  IPv4Enabled  IPv6Enabled 
+----                           -------         -------------  -----------  ----------- 
+Ethernet                       LSO Version 2   False          True         True        
+
+
+
+
+!!!-------------------!!!
+PowerShell.exe Get-NetAdapterChecksumOffload '*'
+
+Name                           IpIPv4Enabled   TcpIPv4Enabled  TcpIPv6Enabled  UdpIPv4Enabled  UdpIPv6Enabled 
+----                           -------------   --------------  --------------  --------------  -------------- 
+Ethernet                       RxTxEnabled     RxTxEnabled     RxTxEnabled     RxTxEnabled     RxTxEnabled    
+
+
+
+
+!!!-------------------!!!
+PowerShell.exe Get-NetTCPSetting -SettingName internet
+
+
+SettingName                     : Internet
+MinRto(ms)                      : 300
+InitialCongestionWindow(MSS)    : 10
+CongestionProvider              : CTCP
+CwndRestart                     : False
+DelayedAckTimeout(ms)           : 40
+DelayedAckFrequency             : 2
+MemoryPressureProtection        : Enabled
+AutoTuningLevelLocal            : Restricted
+AutoTuningLevelGroupPolicy      : NotConfigured
+AutoTuningLevelEffective        : Local
+EcnCapability                   : Enabled
+Timestamps                      : Allowed
+InitialRto(ms)                  : 1000
+ScalingHeuristics               : Disabled
+DynamicPortRangeStartPort       : 49152
+DynamicPortRangeNumberOfPorts   : 16384
+AutomaticUseCustom              : Disabled
+NonSackRttResiliency            : Disabled
+ForceWS                         : Enabled
+MaxSynRetransmissions           : 4
+AutoReusePortRangeStartPort     : 0
+AutoReusePortRangeNumberOfPorts : 0
+
+
+
+
+
+!!!-------------------!!!
+netsh int tcp show global
+Querying active state...
+
+TCP Global Parameters
+----------------------------------------------
+Receive-Side Scaling State          : enabled 
+Receive Window Auto-Tuning Level    : restricted 
+Add-On Congestion Control Provider  : default 
+ECN Capability                      : enabled 
+RFC 1323 Timestamps                 : allowed 
+Initial RTO                         : 1000 
+Receive Segment Coalescing State    : enabled 
+Non Sack Rtt Resiliency             : disabled 
+Max SYN Retransmissions             : 4 
+Fast Open                           : enabled 
+Fast Open Fallback                  : enabled 
+HyStart                             : enabled 
+Proportional Rate Reduction         : enabled 
+Pacing Profile                      : off 
+
+
+
+!!!-------------------!!!
+PowerShell.exe Get-NetOffloadGlobalSetting
+
+
+ReceiveSideScaling           : Enabled
+ReceiveSegmentCoalescing     : Enabled
+Chimney                      : Disabled
+TaskOffload                  : Enabled
+NetworkDirect                : Enabled
+NetworkDirectAcrossIPSubnets : Blocked
+PacketCoalescingFilter       : Enabled
+
+
+
+

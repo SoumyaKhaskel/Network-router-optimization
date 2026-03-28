@@ -1,0 +1,22 @@
+============================================
+QoS REGISTRY COMMANDS — DSCP 46
+Date: 27-03-2026
+============================================
+
+--- CS2 ---
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\CS2" /v "Version" /t REG_SZ /d "1.0" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\CS2" /v "Application Name" /t REG_SZ /d "cs2.exe" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\CS2" /v "Protocol" /t REG_SZ /d "UDP" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\CS2" /v "DSCP Value" /t REG_SZ /d "46" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\CS2" /v "Throttle Rate" /t REG_SZ /d "-1" /f
+
+--- Valorant ---
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\Valorant" /v "Version" /t REG_SZ /d "1.0" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\Valorant" /v "Application Name" /t REG_SZ /d "VALORANT-Win64-Shipping.exe" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\Valorant" /v "Protocol" /t REG_SZ /d "UDP" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\Valorant" /v "DSCP Value" /t REG_SZ /d "46" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\Valorant" /v "Throttle Rate" /t REG_SZ /d "-1" /f
+
+--- Verify ---
+reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\CS2"
+reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS\Valorant"

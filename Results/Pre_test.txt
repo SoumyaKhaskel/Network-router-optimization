@@ -1,0 +1,60 @@
+============================================
+BASELINE RESULTS — Before Optimization
+Date: 27-03-2026
+============================================
+
+[PING TEST]
+Google  (8.8.8.8)    → Min: 43ms / Max: 228ms / Avg: 45ms / Loss: 0%
+Cloudflare (1.1.1.1) → Min: 4ms  / Max: 11ms  / Avg: 5ms  / Loss: 0%
+Winner / Future DNS  : Cloudflare 1.1.1.1
+Red Flag             : Google max spike 228ms — bufferbloat confirmed
+
+[IPERF3 LAN THROUGHPUT]
+Server IP       : 192.168.x.x (Windows PC - Ethernet)
+Client IP       : 192.168.x.x (Mac - Wi-Fi)
+Duration        : 30 sec
+Peak Bandwidth  : 273 Mbps
+Avg Bandwidth   : 220 Mbps
+Retransmits     : 0
+Observation     : Dips at sec 3-9 and 24-25 — Wi-Fi interference on Mac side
+
+[WAN SPEED TEST — fast.com]
+Download Speed   : 150 Mbps
+Upload Speed     : 170 Mbps
+Idle Latency     : 3ms
+Loaded Latency   : 64ms
+Bufferbloat Delta: +61ms (21x spike under load)
+Verdict          : Bufferbloat confirmed — SQM fix required
+
+[BUFFERBLOAT TEST — Waveform]
+Test ID                  : 8c46e76a-d9cb-4ada-bdbd
+Grade                    : B
+Idle Latency             : 3.95ms
+Download Latency Spike   : +41ms
+Upload Latency Spike     : 0ms
+Peak Download Ping       : 82.4ms
+95th Percentile Download : 76.04ms
+Low Latency Gaming       : FAIL
+Root Cause               : Download-side bufferbloat only
+
+[ROUTER INFO]
+Router 1 (Tenda)
+  Model         : F3 Wireless N300
+  FCC ID        : V7TF3-16
+  MAC           : 0495E6CB0840
+  Admin IP      : 192.x.0.x
+  Firmware      : Unknown (admin locked)
+
+Router 2 (Jio)
+  Model         : Hybrid STB JHS D200 v2
+  Firmware      : ARCNTF1_JCOW411_R3.14.1
+  Serial        : RRIOTDLT0028613
+  MAC           : CCF55F2657A7
+  Admin IP      : 192.x.x.x
+
+[NETWORK INFO]
+WAN IP      : 4x.x7.x.xx
+LAN IP      : 192.168.x.x
+NAT Type    : Single NAT
+Double NAT  : No
+MTU         : 1500 (confirmed via DF ping)
